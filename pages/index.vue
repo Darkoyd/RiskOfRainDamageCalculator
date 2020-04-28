@@ -11,7 +11,14 @@
         :key="survivor.index"
         align="center"
       >
-        {{ survivor.name }}
+        <div
+          class="survivorCard"
+        >
+          <h4>
+            {{ survivor.name }}
+          </h4>
+          <img :src="getImage(survivor.image)">
+        </div>
       </b-col>
     </b-row>
   </b-container>
@@ -24,41 +31,56 @@ export default {
     return {
       survivors: [
         {
-          name: 'Acrid'
+          name: 'Acrid',
+          image: 'Acrid.png'
         },
         {
-          name: 'Artificer'
+          name: 'Artificer',
+          image: 'Artificer.png'
         },
         {
-          name: 'Commando'
+          name: 'Commando',
+          image: 'Commando.png'
         },
         {
-          name: 'Engineer'
+          name: 'Engineer',
+          image: 'Engineer.png'
         },
         {
-          name: 'Huntress'
+          name: 'Huntress',
+          image: 'Huntress.png'
         },
         {
-          name: 'Loader'
+          name: 'Loader',
+          image: 'Loader.png'
         },
         {
-          name: 'Mercenary'
+          name: 'Mercenary',
+          image: 'Mercenary.png'
         },
         {
-          name: 'MULL-T'
+          name: 'MUL-T',
+          image: 'MUL-T.png'
         },
         {
-          name: 'REX'
+          name: 'REX',
+          image: 'REX.png'
         }
 
       ]
     }
   },
-  created () {
+  methods: {
+    getImage (image) {
+      return require('assets/' + image)
+    }
   }
 }
 </script>
 
 <style>
-
+.survivorCard {
+  max-width: 128px;
+  border: 1px solid #ccc;
+}
 </style>
