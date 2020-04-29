@@ -1,40 +1,42 @@
 <template>
-  <div>
+  <div class="bg">
     <div>
-      <b-navbar toggleable="lg">
-        <b-navbar-brand href="#">
-          Risk of Rain 2 Damage Calculator
-        </b-navbar-brand>
+      <div>
+        <b-navbar toggleable="lg">
+          <b-navbar-brand href="/">
+            Risk of Rain 2 Damage Calculator
+          </b-navbar-brand>
 
-        <b-navbar-toggle target="nav-collapse" />
+          <b-navbar-toggle target="nav-collapse" />
 
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item href="#">
-              Survivors
-            </b-nav-item>
-          </b-navbar-nav>
+          <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav>
+              <b-nav-item href="/survivors">
+                Survivors
+              </b-nav-item>
+            </b-navbar-nav>
 
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
-              <template v-slot:button-content>
-                <em>About</em>
-              </template>
-              <b-dropdown-item href="#">
-                Learn More
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                Feedback
-              </b-dropdown-item>
-            </b-nav-item-dropdown>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
-    <div style="padding: 2em;">
-      <nuxt />
+            <!-- Right aligned nav items -->
+            <b-navbar-nav class="ml-auto">
+              <b-nav-item-dropdown right>
+                <!-- Using 'button-content' slot -->
+                <template v-slot:button-content>
+                  <em>About</em>
+                </template>
+                <b-dropdown-item href="#">
+                  Learn More
+                </b-dropdown-item>
+                <b-dropdown-item href="#">
+                  Feedback
+                </b-dropdown-item>
+              </b-nav-item-dropdown>
+            </b-navbar-nav>
+          </b-collapse>
+        </b-navbar>
+      </div>
+      <div style="padding: 2em;">
+        <nuxt />
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +52,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+.bg{
+  background-image: url('../assets/Background.jpg');
+
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 969px;
 }
 
 .navbar {

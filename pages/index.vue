@@ -1,24 +1,35 @@
 <template>
   <b-container>
-    <b-row
-      v-for="row in Math.ceil(survivors.length/5)"
-      :key="row.index"
-      align-h="center"
-      class="row"
-    >
-      <b-col
-        v-for="survivor in survivors.slice((row-1)*5 , row*5)"
-        :key="survivor.index"
-        align="center"
-      >
-        <div
-          class="survivorCard"
+    <h1>Risk of Rain 2 Damage Calculator</h1>
+    <h2>Last update: <a href="https://steamcommunity.com/games/632360/announcements/detail/4642591179202236270"> Build ID #4892828</a> </h2>
+    <br>
+    <br>
+    <b-row>
+      <b-col>
+        <b-btn
+          variant="success"
+          href="survivors/"
         >
-          <h4>
-            {{ survivor.name }}
-          </h4>
-          <img :src="getImage(survivor.image)">
-        </div>
+          <img :src="getImage()">
+          Get started
+        </b-btn>
+      </b-col>
+      <b-col>
+        <b-btn
+          variant="primary"
+          href="learnMore/"
+        >
+          Learn More
+        </b-btn>
+      </b-col>
+      <b-col>
+        <b-btn
+          variant="dark"
+          href="https://github.com/Darkoyd/RiskOfRainDamageCalculator"
+        >
+          <font-awesome-icon size="lg" :icon="['fab', 'github']" />
+          Source Code
+        </b-btn>
       </b-col>
     </b-row>
   </b-container>
@@ -28,59 +39,15 @@
 export default {
   name: 'Index',
   data () {
-    return {
-      survivors: [
-        {
-          name: 'Acrid',
-          image: 'Acrid.png'
-        },
-        {
-          name: 'Artificer',
-          image: 'Artificer.png'
-        },
-        {
-          name: 'Commando',
-          image: 'Commando.png'
-        },
-        {
-          name: 'Engineer',
-          image: 'Engineer.png'
-        },
-        {
-          name: 'Huntress',
-          image: 'Huntress.png'
-        },
-        {
-          name: 'Loader',
-          image: 'Loader.png'
-        },
-        {
-          name: 'Mercenary',
-          image: 'Mercenary.png'
-        },
-        {
-          name: 'MUL-T',
-          image: 'MUL-T.png'
-        },
-        {
-          name: 'REX',
-          image: 'REX.png'
-        }
-
-      ]
-    }
   },
   methods: {
-    getImage (image) {
-      return require('assets/' + image)
+    getImage () {
+      return require('assets/Small_Chest.png')
     }
   }
 }
 </script>
 
 <style>
-.survivorCard {
-  max-width: 128px;
-  border: 1px solid #ccc;
-}
+
 </style>
